@@ -3,63 +3,75 @@ import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
 @Entity(tableName = "comics")
 public class Comics {
-    @PrimaryKey(autoGenerate = true)
-    @NonNull
-    @ColumnInfo(name = "comicsId")
-    private int mId;
-    @Nullable
-    @ColumnInfo(name = "comicsTitle")
-    private String mTitle;
-    public int getId() {
-        return mId;
-    }
-    public void setId(@NonNull int id) {
-        mId = id;
-    }
-    public String getTitle() {
-        return mTitle;
-    }
-    public void setTitle(@Nullable String title) {
-        mTitle = title;
-    }
-    public String getAuthor() {
-        return mAuthor;
-    }
-    public void setAuthor(@Nullable String author) {
-        mAuthor = author;
-    }
-    public String getCreationDate() {
-        return mCreationDate;
-    }
-    public void setCreationDate(@Nullable String creationDate) {
-        mCreationDate = creationDate;
-    }
-    public String getDesciption() {
-        return mDescription;
-    }
-    public void setTitle(@Nullable String description) {
-        mDescription = description;
-    }
-    @Nullable
-    private String mAuthor;
-    @Nullable
-    private String mDescription;
-    @Nullable
-    private String mCreationDate;
-    public int getScore() {
-        return mScore;
-    }
-    public void setScore(int score) {
-        mScore = score;
-    }
-    private int mScore;
-    public Comics(@Nullable String title, @Nullable String author, int score, @Nullable String creationDate, @Nullable String description) {
-        mTitle = title;
-        mAuthor = author;
-        mScore = score;
-        mCreationDate = creationDate;
-  	mDescription = description;
-    }
+	
+	@PrimaryKey(autoGenerate = true)
+	@NonNull
+	@ColumnInfo(name = "id")
+	private int id;
+	
+	@Nullable
+	@ColumnInfo(name = "creationDate")
+	private String creationDate;
+	
+	@Nullable
+	@ColumnInfo(name = "description")
+	private String description;
+
+	@Nullable
+	@ColumnInfo(name = "author")
+	private String author;
+	
+	@ColumnInfo(name = "score")
+	private int score;
+	
+	public Stress(@Nullable String creationDate, @Nullable String description, @Nullable String author, int score) {
+		this.creationDate = creationDate;
+		this.description = description;
+		this.author = author;
+		this.score = score;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(@NonNull int id) {
+		this.id = id;
+	}
+
+	public String getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(@Nullable String creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(@Nullable String description) {
+		this.description = description;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(@Nullable String author) {
+		this.author = author;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
 }
