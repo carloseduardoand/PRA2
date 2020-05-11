@@ -52,7 +52,7 @@ public class Comics {
         mScore = score;
     }
     private int mScore;
-    public Comics(String title, String author, int score, String creationDate, String description) {
+    public Comics(@Nullable String title, String author, int score, String creationDate, String description) {
         mTitle = title;
         mAuthor = author;
         mScore = score;
