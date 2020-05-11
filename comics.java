@@ -27,13 +27,13 @@ public class Comics {
     public String getAuthor() {
         return mAuthor;
     }
-    public void setAuthor(String author) {
+    public void setAuthor(@Nullable String author) {
         mAuthor = author;
     }
     public String getCreationDate() {
         return mCreationDate;
     }
-    public void setCreationDate(String creationDate) {
+    public void setCreationDate(@Nullable String creationDate) {
         mCreationDate = creationDate;
     }
     public String getDesciption() {
@@ -42,8 +42,11 @@ public class Comics {
     public void setTitle(@Nullable String description) {
         mDescription = description;
     }
+    @Nullable
     private String mAuthor;
+    @Nullable
     private String mDescription;
+    @Nullable
     private String mCreationDate;
     public int getScore() {
         return mScore;
@@ -52,7 +55,7 @@ public class Comics {
         mScore = score;
     }
     private int mScore;
-    public Comics(@Nullable String title, String author, int score, String creationDate, String description) {
+    public Comics(@Nullable String title, @Nullable String author, int score, @Nullable String creationDate, @Nullable String description) {
         mTitle = title;
         mAuthor = author;
         mScore = score;
